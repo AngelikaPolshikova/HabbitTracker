@@ -1,4 +1,4 @@
-# Habbit Tracker
+# Habit Tracker
 
 description
 
