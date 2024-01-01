@@ -36,41 +36,51 @@ pip install -r requirements.txt
 ## Usage
 The Habit Tracker CLI provides a user-friendly menu for creating habits, marking them as complete, analyzing habits, and removing habits. Simply follow the prompts to interact with the application.
 
- ![Main Menu](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/Main_menu.png)
+<img src="/img/Main_menu.png" alt="image" width="400" height="auto">
 
 ### Example Commands:
 - **Creating a Habit**: Choose "Create a habit" from the menu and follow the prompts to define a new habit.
-  
- ![Main Menu](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/create_habit.png)
+
+ <img src="/img/create_habit.png" alt="image" width="400" height="auto"> 
 
 - **Completing a Habit**: Select "Complete habit," enter the habit name, and the application will handle the completion process.
-  
-![complete_habit](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/Completed_habit.png)
-  
+
+ <img src="/img/Completed_habit.png" alt="image" width="400" height="auto">   
+ 
 - **Analyzing Habits**:
   
   * analyzing all habits
   
-![Analyse habits](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/analyse_habits.png)
+  <img src="/img/analyse_habits.png" alt="image" width="400" height="auto"> 
 
   * habits within the same period
     
- ![Analyse habits](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/analyze_all.png)
- 
+  <img src="/img/analyze_all.png" alt="image" width="400" height="auto"> 
+
   * longest streaks
-    
- ![Longest_streak](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/longest_all_streak.png)     
+
+  <img src="/img/longest_all_streak.png" alt="image" width="400" height="auto">   
  
   * habit logs
-    
- ![logs](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/check_logs.png)
-      
+
+  <img src="/img/check_logs.png" alt="image" width="400" height="auto"> 
+
+  * plotting your habit trend
+
+  <img src="/img/plot_habit.png" alt="image" width="400" height="auto">  
+    <br/><br/>
+  <img src="/img/plot_habit_2.png" alt="image" width="400" height="auto"> 
+  
+  After choosing which habit to plot, you will see your graph in a pop-up window.
+
+  <img src="/img/plot.png" alt="image" width="400" height="auto"> 
+  
 - **Removing a Habit**: Under "Remove," you will see the list of the existing habits. Choose the habit you want to remove from the provided list.
 
-![remove](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/remove.png)
+ <img src="/img/remove.png" alt="image" width="400" height="auto"> 
 
+  <img src="/img/remove_2.png" alt="image" width="400" height="auto"> 
 
-![remove_2](https://github.com/AngelikaPolshikova/HabitTracker/blob/main/img/remove_2.png)
 
 ## Analysis
 The application offers several analysis features, allowing users to gain insights into their habit-building journey. Analyze all tracked habits, habits with the same period, your longest streak, and see all your habit logs.
