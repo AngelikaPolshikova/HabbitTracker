@@ -1,4 +1,5 @@
-from database import *
+from habit_database import *
+import matplotlib.pyplot as plt
 
 def get_all_habits(db):
     
@@ -73,4 +74,21 @@ def get_longest_of_all(db):
 
     long = longest_of_all(db)
     print(f"Longest streak for all defined habits is \n {long} days ")
+
+def plot_streak_graph(db, habit_name):
+    dates = get_last_checked_date(db, habit_name)
+    streaks = [get_streak_from_date(db, habit_name, date[0]) for date in dates]
+    if not dates or not streaks:
+        print(f"No data available to plot for habit '{habit_name}'.")
+        return
+    dates_str = [str(date[0]) for date in reversed(dates)]
+    reversed_streaks = list(reversed(streaks))
+    plt.plot(dates_str, reversed_streaks, marker='o')
+    plt.title(f"Streak Graph for Habit '{habit_name}'")
+    plt.xlabel("Date")
+    plt.ylabel("Streak")
+    plt.xticks(rotation=90)
+    plt.tight_layout()
+    plt.show()
+
 
