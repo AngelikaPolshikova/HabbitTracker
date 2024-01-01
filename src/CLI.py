@@ -50,16 +50,17 @@ def cli():
 
         elif choice == "Analyse my habits":
             # Display options for habit analysis
-             analyse_choice = questionary.select("Which habit you want to analyse?",
+            analyse_choice = questionary.select("Which habit you want to analyse?",
                                                 choices=["Analyse All Tracked Habits",
                                                          "Analyse Habit With Same Period",
                                                          "Analyse Your Longest Streak",
-                                                         "Analyse Your Habit logs"]).ask()
+                                                         "Analyse Your Habit logs",
+                                                         "Plot Your Habit"]).ask()
 
-             if analyse_choice == "Analyse All Tracked Habits":
+            if analyse_choice == "Analyse All Tracked Habits":
                 show_all_habit(db)
 
-             elif analyse_choice == "Analyse Habit With Same Period":
+            elif analyse_choice == "Analyse Habit With Same Period":
                 period = questionary.select("Choose period", choices=["Daily", "Weekly", "Monthly"]).ask()
 
                 if period == "Daily":
@@ -74,7 +75,7 @@ def cli():
                     print("Your Weekly Habits:-")
                     get_habit_with_period(db, period="weekly")
 
-             elif analyse_choice == "Analyse Your Longest Streak":
+            elif analyse_choice == "Analyse Your Longest Streak":
                 long = questionary.select("choose one option", choices=["Longest Streak Of Specific Habit",
                                                                         "Longest Streak Of All Current Habits"]).ask()
                 if long == "Longest Streak Of Specific Habit":
@@ -84,7 +85,15 @@ def cli():
                     get_longest_streak(db, lon_streak)
                 else:
                     get_longest_of_all(db)
-             else:
+            elif analyse_choice == "Plot Your Habit":
+                graph_habit_name = questionary.text(
+                    "Enter the name of the habit for which you want to see the graph",
+                    validate=lambda text: True if len(text) > 0 else "Enter a value"
+                ).ask()
+
+                # Call the plot_streak_graph function from the analysis file
+                plot_streak_graph(db, graph_habit_name)
+            else:
                 # Ask user for habit name and show logs
                 name = questionary.text("Enter the name of the habit for which you want to check logs\n",
                                         validate=lambda text: True if len(text) > 0 else "Enter a habit name").ask()
